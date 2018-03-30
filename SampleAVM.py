@@ -8,7 +8,6 @@ Created on Thu Mar 29 11:31:01 2018
 import numpy as np
 import pandas as pd
 import pickle
-import os
 
 from feature_values import category
 
@@ -22,7 +21,6 @@ label_enc = pickle.load(file2)
 column_name = pickle.load(file4)
 
 data = pd.read_csv('test.csv')
-print(data.shape)
 X_input = pd.DataFrame(columns=column_name)
 
 X_input = X_input.astype('float')
@@ -42,15 +40,15 @@ for colm in data:
        
 y_test = classifier.predict(X_input)
 
-print(y_test)
+#print(y_test[0])
 prediction = y_test[0]
-print(np.exp(prediction))
+print('Gradient Boosting estimate',int(np.exp(prediction)))
 
 y_test = classifier1.predict(X_input)
 
-print(y_test)
+#print(y_test[0])
 prediction = y_test[0]
-print(np.exp(prediction))
+print('Linear Regression estimate', int(np.exp(prediction)))
 
 
 

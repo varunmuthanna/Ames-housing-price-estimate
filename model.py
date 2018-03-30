@@ -32,8 +32,6 @@ def display_correlation(train_data_set,target):
 
 def remove_outliers(train_data_set):
     train_data_set = train_data_set[train_data_set['GrLivArea'] < 5000]
-    #train_data_set = train_data_set[train_data_set['GarageArea'] < 1200]
-    #train_data_set = train_data_set[train_data_set['1stFlrSF'] < 4000]
     return train_data_set
 
 def pickle_write(filename, model):
